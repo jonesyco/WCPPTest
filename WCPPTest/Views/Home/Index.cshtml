@@ -1,0 +1,121 @@
+﻿@model IEnumerable<WCPPTest.Equipment>
+
+
+<h3>Menu</h3>
+
+<div class="col-md-3 col-lg-3 col-sm-3">
+    <p>
+        @Html.ActionLink("Scan Utility", "Scan", "Inspection", null, new { @class = "btn btn-primary btn-block" })
+    </p>
+    <p>
+        @Html.ActionLink("Equipment", "Index", "Equipment", null, new { @class = "btn btn-primary  btn-block" })
+    </p>
+    <p>
+        @Html.ActionLink("Inspection Log", "List", "Inspection", null, new { @class = "btn btn-primary btn-block" })
+    </p>
+    <p>
+        @Html.ActionLink("Equipment Types", "Index", "EquipmentType", null, new { @class = "btn btn-primary btn-block" })
+    </p>
+    <p>
+        @Html.ActionLink("Conditions", "Index", "Conditions", null, new { @class = "btn btn-primary  btn-block" })
+    </p>
+    <p>
+        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-primary btn-block">Log off</a>
+    </p>
+</div>
+<div class="col-md-9 col-lg-9 col-sm-9">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading ">
+            <h3 class="panel-title">Pending Inspections</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover table-condensed" style="width: 100%;">
+                <tr>
+                    <td>
+                        <strong>Utility</strong>
+                    </td>
+                    <td>
+                        <strong>Next Inspection</strong>
+                    </td>
+                    <td class="hidden-xs">
+                        <strong>Description</strong>
+                    </td>
+                    <td class="hidden-xs">
+                        <strong>Status</strong>
+                    </td>
+                    <td nowrap>
+                        <strong>Action</strong>
+                    </td>
+                </tr>
+                @*@foreach (var item in Model)
+                {
+                    var myItem = item;
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => myItem.UtilityId)</td>
+                        <td>@Html.DisplayFor(modelItem => myItem.NextInspectionDue)</td>
+                        <td class="hidden-xs">@Html.DisplayFor(modelItem => myItem.EquipmentDescription)</td>
+                        <td class="hidden-xs">@Html.DisplayFor(modelItem => myItem.Status)</td>
+                        <td nowrap>
+                            <a href="@Url.Action("Details", "Equipment", new { equipmentId = myItem.EquipmentId })" style="margin-right: 5px; text-decoration: none;" data-toggle="tooltip" data-placement="top" title="Equipment Details">
+                                <span class="fa fa-info-circle"></span>
+                                <span class="sr-only">Details</span>
+                            </a>
+                            <a href="@Url.Action("Edit", "Equipment", new { equipmentId = myItem.EquipmentId })" style="margin-right: 5px; text-decoration: none;" data-toggle="tooltip" data-placement="top" title="Edit Equipment">
+                                <span class="fa fa-pencil"></span>
+                                <span class="sr-only">Edit</span>
+                            </a>
+                            <a href="@Url.Action("Create", "InspectionResult", new { equipmentId = myItem.EquipmentId })" style="margin-right: 5px; text-decoration: none;"  data-toggle="tooltip" data-placement="top" title="Inspect">
+                                <span class="fa fa-search"></span>
+                                <span class="sr-only">Inspect</span>
+                            </a>
+                        </td>
+                    </tr>
+                }*@
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-primary ">
+        <div class="panel-heading">
+            <h3 class="panel-title">Repair Items</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover table-condensed" style="width: 100%;">
+                <tr>
+                    <td>
+                        <strong>Utility</strong>
+                    </td>
+                    <td nowrap>
+                        <strong>Next Inspection</strong>
+                    </td>
+                    <td class="hidden-xs">
+                        <strong>Description</strong>
+                    </td>
+                    <td class="hidden-xs">
+                        <strong>Status</strong>
+                    </td>
+                    <td nowrap>
+                        <strong>Action</strong>
+                    </td>
+                </tr>
+                @*@foreach (var item in ((List<Equipment>) ViewData["repairs"]))
+                    {
+                       @Html.Display(item.UtilityId)<br />
+                    }*@
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+ 
+
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

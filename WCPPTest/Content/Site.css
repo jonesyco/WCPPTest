@@ -1,0 +1,48 @@
+﻿body {
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+input,
+select,
+textarea { max-width: 280px; }
+
+input[type=checkbox] {
+    height: 25px;
+    width: 25px;
+}
+
+a, a:hover { color: rgba(0, 0, 0, .7) }
+
+tr:nth-child(odd) { background-color: #eee; }
+
+tr:nth-child(even) { background-color: #fff; }
+
+#ReviewMsg {
+
+    margin-bottom: 5px;
+    margin-top: 5px; 
+}
+
+#Review {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.Uppercase { text-transform: uppercase; }
+
+.Bold { font-weight: bold; }
+
+.modal-content {
+    margin: 30px auto !important;
+    width: 200px !important;
+}
