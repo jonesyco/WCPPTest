@@ -16,10 +16,10 @@ namespace WCPPTest.Controllers
         public ActionResult Start()
         {
             string lastUtilityPrinted = "SB.000000";
-            if (_db.Utilities.Any())
-            {
-                lastUtilityPrinted = "SB." + _db.Utilities.Find(1).LastUtilityCodePrinted.Trim();
-            }
+            //if (_db.Utilities.Any())
+            //{
+            //    lastUtilityPrinted = "SB." + _db.Utilities.Find(1).LastUtilityCodePrinted.Trim();
+            //}
             
             ViewData["lastUtilityCodeUsed"] = lastUtilityPrinted;
             return View();
@@ -59,12 +59,12 @@ namespace WCPPTest.Controllers
             TempData["tdCommands"] = printerCommands.ToString();
 
            // ViewData["printerCommands"] = printerCommands.ToString();
-            Last = printcode;
-            var util = _db.Utilities.Find(1);
-            util.LastUtilityCodePrinted = Last;
-            _db.Entry(util).State = EntityState.Modified;
-            await _db.SaveChangesAsync();
-            _db.Entry(util).Reload();
+            //Last = printcode;
+            //var util = _db.Utilities.Find(1);
+            //util.LastUtilityCodePrinted = Last;
+            //_db.Entry(util).State = EntityState.Modified;
+            //await _db.SaveChangesAsync();
+            //_db.Entry(util).Reload();
             return RedirectToAction("Index");
 
         }
