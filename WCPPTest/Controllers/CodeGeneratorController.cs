@@ -29,8 +29,8 @@ namespace WCPPTest.Controllers
         {
             int qty = Convert.ToInt32(form["quantity"]);
 
-            int value = Convert.ToInt32(_db.Utilities.Find(1).LastUtilityCodePrinted.Trim().ToString());
-
+            //int value = Convert.ToInt32(_db.Utilities.Find(1).LastUtilityCodePrinted.Trim().ToString());
+            int value = Convert.ToInt32("000000");
 
             string printcode = "";
             string printerCommands = "";
